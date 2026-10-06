@@ -3,12 +3,15 @@
 }
 
 :root {
-  --rose: #d98eaa;
-  --deep-rose: #9f526f;
-  --pink: #f9e5ec;
+  --pink: #f6dce9;
+  --light-pink: #fcecf4;
+  --lilac: #ddd5f0;
+  --purple: #80628c;
+  --deep-purple: #65466f;
+  --gold: #c9a45c;
+  --light-gold: #e5cb91;
   --cream: #fffaf6;
-  --gold: #c7a15a;
-  --text: #5c4650;
+  --text: #624f5c;
   --white: #ffffff;
 }
 
@@ -18,47 +21,49 @@ html {
 
 body {
   margin: 0;
+
   color: var(--text);
 
   background:
     radial-gradient(
-      circle at 15% 10%,
-      rgba(255,255,255,.9),
-      transparent 22%
+      circle at 20% 5%,
+      rgba(255,255,255,.95),
+      transparent 25%
     ),
     radial-gradient(
-      circle at 85% 25%,
-      rgba(255,255,255,.8),
-      transparent 20%
+      circle at 85% 30%,
+      rgba(221,213,240,.45),
+      transparent 28%
     ),
     linear-gradient(
       145deg,
-      #f7dfe8,
-      #fffaf6 48%,
-      #f3d6e2
+      #f5dce9,
+      #fffaf6 45%,
+      #e8def1
     );
 
   font-family: "Montserrat", sans-serif;
+
   overflow-x: hidden;
 }
 
-body::before,
-body::after {
-  content: "✦";
-  position: fixed;
-  z-index: -1;
-  color: rgba(199,161,90,.25);
-  font-size: 90px;
-}
-
 body::before {
-  left: 3%;
-  top: 25%;
-}
+  content: "";
 
-body::after {
-  right: 3%;
-  bottom: 20%;
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,255,255,.45),
+      transparent 35%
+    );
+
+  z-index: -2;
 }
 
 main {
@@ -67,98 +72,201 @@ main {
 
 
 /* =========================
+   ESTRELAS
+========================= */
+
+.sparkles {
+  position: fixed;
+
+  color: rgba(201,164,92,.55);
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.sparkle-one {
+  top: 12%;
+  left: 8%;
+  font-size: 25px;
+}
+
+.sparkle-two {
+  top: 32%;
+  right: 8%;
+  font-size: 20px;
+  animation-delay: 1s;
+}
+
+.sparkle-three {
+  top: 65%;
+  left: 5%;
+  font-size: 17px;
+  animation-delay: 2s;
+}
+
+.sparkle-four {
+  bottom: 15%;
+  right: 7%;
+  font-size: 28px;
+  animation-delay: .5s;
+}
+
+
+/* =========================
    ABERTURA
 ========================= */
 
 .hero {
+
   min-height: 100vh;
-  padding: 70px 24px 60px;
+
+  padding: 60px 24px;
 
   display: flex;
+
   align-items: center;
-  flex-direction: column;
+
   justify-content: center;
 
+  flex-direction: column;
+
   text-align: center;
+
   position: relative;
+
+  z-index: 1;
 }
 
-.crown {
+.castle {
+
   color: var(--gold);
-  font-size: 58px;
+
+  font-size: 64px;
+
   line-height: 1;
-  margin-bottom: 18px;
-  animation: float 3s ease-in-out infinite;
+
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 5px 20px rgba(201,164,92,.25);
+
+  animation:
+    float 3s ease-in-out infinite;
 }
 
 .eyebrow {
+
   margin: 0 0 12px;
-  color: var(--deep-rose);
-  letter-spacing: .23em;
-  font-size: 11px;
+
+  color: var(--deep-purple);
+
+  letter-spacing: .22em;
+
+  font-size: 10px;
+
   font-weight: 700;
 }
 
 h1,
 h2 {
-  font-family: "Cormorant Garamond", serif;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
   font-weight: 700;
-  color: var(--deep-rose);
+
+  color: var(--deep-purple);
+
   margin: 0;
 }
 
 h1 {
-  font-size: clamp(76px, 20vw, 150px);
-  line-height: .78;
-  letter-spacing: -.04em;
+
+  font-size:
+    clamp(82px, 22vw, 160px);
+
+  line-height: .75;
+
+  letter-spacing: -.05em;
+
+  text-shadow:
+    0 8px 25px rgba(101,70,111,.12);
 }
 
 .turning {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(21px, 5vw, 34px);
-  margin: 26px 0 12px;
-  color: #805467;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(22px, 5vw, 34px);
+
+  margin: 28px 0 18px;
+
+  color: #795b80;
 }
 
 
 /* =========================
-   FOTO DA GIULIA
+   FOTO
 ========================= */
 
 .photo-frame {
-  width: 190px;
-  height: 190px;
-  padding: 6px;
 
-  border: 1px solid rgba(199,161,90,.8);
-  border-radius: 50%;
+  width: 205px;
 
-  margin: 20px 0 22px;
+  height: 205px;
 
-  background: #fff;
-
-  box-shadow:
-    0 12px 40px rgba(125,67,91,.15);
+  padding: 7px;
 
   position: relative;
+
+  border:
+    2px solid
+    var(--light-gold);
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fff8fb
+    );
+
+  box-shadow:
+    0 15px 50px
+    rgba(101,70,111,.16),
+    0 0 0 8px
+    rgba(255,255,255,.45);
+
+  margin: 10px 0 16px;
 }
 
 .photo-frame::before {
-  content: "✦";
+
+  content: "";
 
   position: absolute;
 
-  top: -14px;
-  right: 4px;
+  inset: -8px;
 
-  color: var(--gold);
-  font-size: 25px;
+  border:
+    1px dashed
+    rgba(201,164,92,.5);
 
-  z-index: 2;
+  border-radius: 50%;
 }
 
 .photo-frame img {
+
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -166,13 +274,121 @@ h1 {
   object-fit: cover;
 
   border-radius: 50%;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.photo-glow {
+
+  position: absolute;
+
+  inset: -20px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.55),
+      transparent 65%
+    );
+
+  z-index: -1;
+}
+
+.star {
+
+  position: absolute;
+
+  z-index: 3;
+
+  color: var(--gold);
+
+  text-shadow:
+    0 3px 10px
+    rgba(201,164,92,.3);
+}
+
+.star-one {
+
+  top: -8px;
+
+  left: 22px;
+
+  font-size: 22px;
+}
+
+.star-two {
+
+  right: -5px;
+
+  top: 55px;
+
+  font-size: 18px;
+}
+
+.star-three {
+
+  bottom: 10px;
+
+  left: -8px;
+
+  font-size: 19px;
+}
+
+
+/* =========================
+   IDADE
+========================= */
+
+.age-text {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+
+  color: var(--gold);
+}
+
+.age-text span {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 45px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.age-text small {
+
+  font-size: 9px;
+
+  letter-spacing: .25em;
+
+  font-weight: 700;
 }
 
 .birthday {
+
   max-width: 480px;
+
   line-height: 1.7;
-  font-size: 14px;
-  margin: 0 0 28px;
+
+  font-size: 13px;
+
+  margin: 0 0 25px;
 }
 
 
@@ -181,20 +397,28 @@ h1 {
 ========================= */
 
 .button {
+
   display: inline-flex;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 8px;
 
   min-height: 52px;
-  padding: 14px 25px;
+
+  padding: 14px 27px;
 
   border-radius: 999px;
+
   text-decoration: none;
 
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: .03em;
+
+  font-size: 12px;
+
+  letter-spacing: .04em;
 
   transition:
     transform .2s ease,
@@ -202,76 +426,162 @@ h1 {
 }
 
 .button:hover {
-  transform: translateY(-2px);
+
+  transform: translateY(-3px);
 }
 
 .primary {
-  color: var(--white);
+
+  color: white;
 
   background:
     linear-gradient(
       135deg,
-      #bd718f,
-      #d69ab0
+      #8d6b99,
+      #b58bbd
     );
 
   box-shadow:
     0 12px 30px
-    rgba(159,82,111,.22);
+    rgba(101,70,111,.25);
 }
 
 
 /* =========================
-   CARTÕES
+   CARTÃO
 ========================= */
 
 .card-section {
-  width: min(
-    760px,
-    calc(100% - 32px)
-  );
 
-  margin: 0 auto 80px;
+  width:
+    min(
+      760px,
+      calc(100% - 30px)
+    );
+
+  margin:
+    0 auto 80px;
 
   padding:
-    clamp(34px, 7vw, 68px)
-    clamp(22px, 7vw, 70px);
+    clamp(38px, 7vw, 70px)
+    clamp(24px, 7vw, 70px);
 
   text-align: center;
 
   background:
-    rgba(255,250,246,.82);
+    rgba(255,250,246,.87);
 
   border:
     1px solid
-    rgba(199,161,90,.25);
+    rgba(201,164,92,.35);
 
-  border-radius: 30px;
+  border-radius: 32px;
 
   box-shadow:
     0 25px 80px
-    rgba(116,65,85,.10);
+    rgba(101,70,111,.12);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+
+  position: relative;
+
+  overflow: hidden;
 }
 
-.ornament {
+.card-section::before {
+
+  content: "✦";
+
+  position: absolute;
+
+  top: 15px;
+
+  left: 22px;
+
+  color:
+    rgba(201,164,92,.35);
+
+  font-size: 25px;
+}
+
+.card-section::after {
+
+  content: "✧";
+
+  position: absolute;
+
+  bottom: 15px;
+
+  right: 22px;
+
+  color:
+    rgba(201,164,92,.35);
+
+  font-size: 25px;
+}
+
+.castle-line {
+
   color: var(--gold);
-  font-size: 23px;
-  margin-bottom: 10px;
+
+  font-size: 13px;
+
+  letter-spacing: .1em;
+
+  margin-bottom: 16px;
 }
 
 h2 {
-  font-size: clamp(42px, 9vw, 62px);
+
+  font-size:
+    clamp(44px, 9vw, 64px);
+
   line-height: .95;
-  margin-bottom: 24px;
+
+  margin-bottom: 25px;
 }
 
 .message {
+
   max-width: 600px;
-  margin: 0 auto 16px;
+
+  margin:
+    0 auto 16px;
+
   font-size: 14px;
+
   line-height: 1.9;
+}
+
+.magic-divider {
+
+  margin:
+    28px auto 24px;
+
+  width: 100%;
+
+  max-width: 300px;
+
+  border-top:
+    1px solid
+    rgba(201,164,92,.35);
+
+  position: relative;
+}
+
+.magic-divider span {
+
+  position: relative;
+
+  top: -14px;
+
+  padding: 0 15px;
+
+  background: var(--cream);
+
+  color: var(--gold);
+
+  font-size: 20px;
 }
 
 
@@ -280,60 +590,92 @@ h2 {
 ========================= */
 
 .details {
-  margin: 34px auto 24px;
+
+  margin:
+    30px auto 24px;
+
   max-width: 520px;
 
   display: grid;
+
   gap: 13px;
 
   text-align: left;
 }
 
 .detail {
+
   display: flex;
+
   gap: 15px;
+
   align-items: center;
 
-  padding: 15px 17px;
+  padding: 16px 17px;
 
   background:
-    rgba(255,255,255,.72);
+    rgba(255,255,255,.76);
+
+  border:
+    1px solid
+    rgba(201,164,92,.13);
 
   border-radius: 18px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(101,70,111,.04);
 }
 
 .detail .icon {
-  flex: 0 0 40px;
 
-  width: 40px;
-  height: 40px;
+  flex:
+    0 0 42px;
+
+  width: 42px;
+
+  height: 42px;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 50%;
 
   color: var(--gold);
-  background: var(--pink);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f9e5ef,
+      #eee6f5
+    );
 
   font-size: 20px;
 }
 
 .detail strong,
 .detail small {
+
   display: block;
 }
 
 .detail strong {
+
   font-size: 14px;
-  color: #684b57;
+
+  color: #674d6e;
+
   margin-bottom: 3px;
 }
 
 .detail small {
+
   font-size: 11px;
+
   line-height: 1.5;
-  color: #8c747d;
+
+  color: #8d788b;
 }
 
 
@@ -342,54 +684,98 @@ h2 {
 ========================= */
 
 .map {
-  color: var(--deep-rose);
+
+  color: var(--deep-purple);
 
   border:
     1px solid
-    rgba(159,82,111,.35);
+    rgba(128,98,140,.4);
 
-  background: transparent;
+  background:
+    rgba(255,255,255,.55);
 }
 
 
 /* =========================
-   FAIXA
+   SEÇÃO MÁGICA
 ========================= */
 
-.ribbon-section {
-  padding: 10px 20px 90px;
+.magic-section {
+
+  padding:
+    0 20px 90px;
+
   text-align: center;
 }
 
-.ribbon {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 4px;
+.magic-card {
 
-  padding: 18px 38px;
+  width:
+    min(
+      650px,
+      100%
+    );
 
-  border-top:
+  margin: auto;
+
+  padding:
+    45px 25px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(237,220,242,.85),
+      rgba(255,245,249,.9)
+    );
+
+  border:
     1px solid
-    rgba(199,161,90,.55);
+    rgba(201,164,92,.35);
 
-  border-bottom:
-    1px solid
-    rgba(199,161,90,.55);
-
-  color: var(--deep-rose);
+  box-shadow:
+    0 20px 60px
+    rgba(101,70,111,.10);
 }
 
-.ribbon span {
+.magic-crown {
+
+  color: var(--gold);
+
+  font-size: 48px;
+
+  margin-bottom: 10px;
+}
+
+.magic-card p {
+
+  margin: 0 0 8px;
+
   font-size: 10px;
+
   letter-spacing: .25em;
+
+  font-weight: 700;
+
+  color: var(--deep-purple);
 }
 
-.ribbon strong {
-  font-family:
-    "Cormorant Garamond",
-    serif;
+.magic-card h2 {
 
-  font-size: 24px;
+  margin: 0;
+
+  font-size:
+    clamp(38px, 8vw, 55px);
+}
+
+.stars {
+
+  color: var(--gold);
+
+  margin-top: 18px;
+
+  letter-spacing: 12px;
 }
 
 
@@ -398,18 +784,28 @@ h2 {
 ========================= */
 
 .confirmation {
-  padding: 20px 0 70px;
+
+  padding:
+    20px 0 70px;
 }
 
 .confirm-card {
+
   margin-bottom: 0;
 }
 
 .whatsapp {
+
   margin-top: 15px;
 
   color: white;
-  background: #45b96b;
+
+  background:
+    linear-gradient(
+      135deg,
+      #45b96b,
+      #63c984
+    );
 
   box-shadow:
     0 12px 30px
@@ -417,11 +813,14 @@ h2 {
 }
 
 .small {
-  margin: 18px auto 0;
+
+  margin:
+    18px auto 0;
 
   max-width: 430px;
 
   font-size: 11px;
+
   line-height: 1.7;
 
   color: #947d85;
@@ -433,38 +832,79 @@ h2 {
 ========================= */
 
 footer {
-  padding: 30px 20px 45px;
+
+  padding:
+    30px 20px 50px;
 
   text-align: center;
 
   color: #947d85;
+
   font-size: 11px;
 }
 
-.mini-crown {
+.footer-crown {
+
   color: var(--gold);
-  font-size: 26px;
-  margin-bottom: 5px;
+
+  font-size: 30px;
+
+  margin-bottom: 7px;
+}
+
+footer span {
+
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--gold);
+
+  font-size: 9px;
+
+  letter-spacing: .2em;
 }
 
 
 /* =========================
-   ANIMAÇÃO
+   ANIMAÇÕES
 ========================= */
 
 @keyframes float {
 
   0%,
   100% {
+
     transform:
       translateY(0)
       rotate(-3deg);
   }
 
   50% {
+
     transform:
-      translateY(-7px)
+      translateY(-8px)
       rotate(3deg);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+
+    opacity: .35;
+
+    transform:
+      scale(.85);
+  }
+
+  50% {
+
+    opacity: 1;
+
+    transform:
+      scale(1.2);
   }
 }
 
@@ -476,33 +916,62 @@ footer {
 @media (max-width: 520px) {
 
   .hero {
-    min-height: 92vh;
-    padding-top: 45px;
+
+    min-height: 95vh;
+
+    padding:
+      45px 20px 50px;
+  }
+
+  .castle {
+
+    font-size: 52px;
   }
 
   .photo-frame {
-    width: 170px;
-    height: 170px;
+
+    width: 175px;
+
+    height: 175px;
   }
 
   .card-section {
-    width: calc(100% - 22px);
-    border-radius: 24px;
+
+    width:
+      calc(100% - 22px);
+
+    border-radius: 25px;
+
     margin-bottom: 55px;
   }
 
   .detail {
+
     padding: 13px;
   }
 
   .detail .icon {
-    flex-basis: 36px;
-    width: 36px;
-    height: 36px;
+
+    flex-basis: 37px;
+
+    width: 37px;
+
+    height: 37px;
   }
 
-  .ribbon {
+  .magic-card {
+
     padding:
-      16px 22px;
+      38px 20px;
+  }
+
+  .sparkle-one {
+
+    left: 3%;
+  }
+
+  .sparkle-two {
+
+    right: 3%;
   }
 }
