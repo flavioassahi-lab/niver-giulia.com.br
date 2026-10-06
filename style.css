@@ -340,7 +340,7 @@ h1 {
 
 
 /* =========================
-   IDADE
+   1 ANO
 ========================= */
 
 .age-text {
@@ -351,29 +351,31 @@ h1 {
 
   justify-content: center;
 
-  gap: 8px;
+  gap: 9px;
 
   margin-bottom: 8px;
 
   color: var(--gold);
 }
 
-.age-text span {
+.number-one {
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: Arial, sans-serif;
 
-  font-size: 45px;
+  font-size: 42px;
 
   font-weight: 700;
 
   line-height: 1;
 }
 
-.age-text small {
+.year-label {
 
-  font-size: 9px;
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 10px;
 
   letter-spacing: .25em;
 
