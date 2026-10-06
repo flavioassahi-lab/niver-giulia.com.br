@@ -1,0 +1,589 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --rose: #d98eaa;
+  --deep-rose: #9f526f;
+  --pink: #f9e5ec;
+  --cream: #fffaf6;
+  --gold: #c7a15a;
+  --text: #5c4650;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(255,255,255,.9),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(255,255,255,.8),
+      transparent 20%
+    ),
+    linear-gradient(
+      145deg,
+      #f7dfe8,
+      #fffaf6 48%,
+      #f3d6e2
+    );
+
+  font-family: "Montserrat", sans-serif;
+
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "✦";
+
+  position: fixed;
+
+  z-index: -1;
+
+  color: rgba(199,161,90,.25);
+
+  font-size: 90px;
+}
+
+body::before {
+  left: 3%;
+  top: 25%;
+}
+
+body::after {
+  right: 3%;
+  bottom: 20%;
+}
+
+main {
+  min-height: 100vh;
+}
+
+
+/* =========================
+   ABERTURA
+========================= */
+
+.hero {
+
+  min-height: 100vh;
+
+  padding: 70px 24px 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+}
+
+.crown {
+
+  color: var(--gold);
+
+  font-size: 58px;
+
+  line-height: 1;
+
+  margin-bottom: 18px;
+
+  animation: float 3s ease-in-out infinite;
+}
+
+.eyebrow {
+
+  margin: 0 0 12px;
+
+  color: var(--deep-rose);
+
+  letter-spacing: .23em;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+h1,
+h2 {
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-weight: 700;
+
+  color: var(--deep-rose);
+
+  margin: 0;
+}
+
+h1 {
+
+  font-size: clamp(76px, 20vw, 150px);
+
+  line-height: .78;
+
+  letter-spacing: -.04em;
+}
+
+.turning {
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(21px, 5vw, 34px);
+
+  margin: 26px 0 12px;
+
+  color: #805467;
+}
+
+.age {
+
+  width: 104px;
+
+  height: 104px;
+
+  border: 1px solid rgba(199,161,90,.7);
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 72px;
+
+  color: var(--gold);
+
+  margin: 16px 0 18px;
+
+  background: rgba(255,255,255,.45);
+
+  box-shadow: 0 12px 40px rgba(125,67,91,.10);
+}
+
+.birthday {
+
+  max-width: 480px;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+
+  margin: 0 0 28px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.button {
+
+  display: inline-flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 52px;
+
+  padding: 14px 25px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  font-size: 13px;
+
+  letter-spacing: .03em;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.button:hover {
+
+  transform: translateY(-2px);
+}
+
+.primary {
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      135deg,
+      #bd718f,
+      #d69ab0
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(159,82,111,.22);
+}
+
+
+/* =========================
+   CARTÕES
+========================= */
+
+.card-section {
+
+  width: min(
+    760px,
+    calc(100% - 32px)
+  );
+
+  margin: 0 auto 80px;
+
+  padding:
+    clamp(34px, 7vw, 68px)
+    clamp(22px, 7vw, 70px);
+
+  text-align: center;
+
+  background:
+    rgba(255,250,246,.82);
+
+  border:
+    1px solid
+    rgba(199,161,90,.25);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 80px
+    rgba(116,65,85,.10);
+
+  backdrop-filter: blur(10px);
+}
+
+.ornament {
+
+  color: var(--gold);
+
+  font-size: 23px;
+
+  margin-bottom: 10px;
+}
+
+h2 {
+
+  font-size: clamp(42px, 9vw, 62px);
+
+  line-height: .95;
+
+  margin-bottom: 24px;
+}
+
+.message {
+
+  max-width: 600px;
+
+  margin: 0 auto 16px;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.details {
+
+  margin: 34px auto 24px;
+
+  max-width: 520px;
+
+  display: grid;
+
+  gap: 13px;
+
+  text-align: left;
+}
+
+.detail {
+
+  display: flex;
+
+  gap: 15px;
+
+  align-items: center;
+
+  padding: 15px 17px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  border-radius: 18px;
+}
+
+.detail .icon {
+
+  flex: 0 0 40px;
+
+  width: 40px;
+
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: var(--gold);
+
+  background: var(--pink);
+
+  font-size: 20px;
+}
+
+.detail strong,
+.detail small {
+
+  display: block;
+}
+
+.detail strong {
+
+  font-size: 14px;
+
+  color: #684b57;
+
+  margin-bottom: 3px;
+}
+
+.detail small {
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  color: #8c747d;
+}
+
+
+/* =========================
+   MAPA
+========================= */
+
+.map {
+
+  color: var(--deep-rose);
+
+  border:
+    1px solid
+    rgba(159,82,111,.35);
+
+  background: transparent;
+}
+
+
+/* =========================
+   FAIXA
+========================= */
+
+.ribbon-section {
+
+  padding: 10px 20px 90px;
+
+  text-align: center;
+}
+
+.ribbon {
+
+  display: inline-flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 18px 38px;
+
+  border-top:
+    1px solid
+    rgba(199,161,90,.55);
+
+  border-bottom:
+    1px solid
+    rgba(199,161,90,.55);
+
+  color: var(--deep-rose);
+}
+
+.ribbon span {
+
+  font-size: 10px;
+
+  letter-spacing: .25em;
+}
+
+.ribbon strong {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 24px;
+}
+
+
+/* =========================
+   CONFIRMAÇÃO
+========================= */
+
+.confirmation {
+
+  padding: 20px 0 70px;
+}
+
+.confirm-card {
+
+  margin-bottom: 0;
+}
+
+.whatsapp {
+
+  margin-top: 15px;
+
+  color: white;
+
+  background: #45b96b;
+
+  box-shadow:
+    0 12px 30px
+    rgba(43,160,83,.22);
+}
+
+.small {
+
+  margin: 18px auto 0;
+
+  max-width: 430px;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #947d85;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+  padding: 30px 20px 45px;
+
+  text-align: center;
+
+  color: #947d85;
+
+  font-size: 11px;
+}
+
+.mini-crown {
+
+  color: var(--gold);
+
+  font-size: 26px;
+
+  margin-bottom: 5px;
+}
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+@keyframes float {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-3deg);
+  }
+
+  50% {
+
+    transform:
+      translateY(-7px)
+      rotate(3deg);
+  }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 520px) {
+
+  .hero {
+
+    min-height: 92vh;
+
+    padding-top: 45px;
+  }
+
+  .card-section {
+
+    width: calc(100% - 22px);
+
+    border-radius: 24px;
+
+    margin-bottom: 55px;
+  }
+
+  .detail {
+
+    padding: 13px;
+  }
+
+  .detail .icon {
+
+    flex-basis: 36px;
+
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .ribbon {
+
+    padding:
+      16px 22px;
+  }
+}
